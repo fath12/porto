@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile - Muhammad Fatkhurrozi</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="portfolio.php">Portfolio</a></li>
+                <li><a href="question2.php">Question 2</a></li>
+                <li><a href="question3.php">Question 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <!-- Add your profile information here -->
+        <h2>Muhammad Fatkhurrozi</h2>
+        <p>
+            I am a web developer with a strong focus on front-end technologies. I have experience working with React and
+            building responsive and interactive user interfaces. I am also passionate about learning new technologies and
+            improving my skills.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
