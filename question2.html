@@ -1,26 +1,3 @@
-<?php
-function get_grade_description($score) {
-    if ($score >= 80 && $score <= 100) {
-        return 'A';
-    } elseif ($score >= 65 && $score <= 79) {
-        return 'B';
-    } elseif ($score >= 50 && $score <= 64) {
-        return 'C';
-    } elseif ($score >= 35 && $score <= 49) {
-        return 'D';
-    } elseif ($score >= 1 && $score <= 34) {
-        return 'E';
-    } else {
-        return 'Invalid Score';
-    }
-}
-
-// Example for student exams
-$student = 'Rocky';
-$score = 90;
-$grade = get_grade_description($score);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +18,30 @@ $grade = get_grade_description($score);
     </header>
 
     <section>
+        <!-- PHP code to determine grade description -->
+        <?php
+        function get_grade_description($score) {
+            if ($score >= 80 && $score <= 100) {
+                return 'A';
+            } elseif ($score >= 65 && $score <= 79) {
+                return 'B';
+            } elseif ($score >= 50 && $score <= 64) {
+                return 'C';
+            } elseif ($score >= 35 && $score <= 49) {
+                return 'D';
+            } elseif ($score >= 1 && $score <= 34) {
+                return 'E';
+            } else {
+                return 'Invalid Score';
+            }
+        }
+
+        // Example for student exams
+        $student = 'Rocky';
+        $score = 90;
+        $grade = get_grade_description($score);
+        ?>
+
         <!-- Display grade description for the given student score -->
         <h2>Grade for <?php echo $student; ?></h2>
         <p>Nilai <?php echo $student; ?> mendapatkan nilai <?php echo $grade; ?></p>

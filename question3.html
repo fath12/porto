@@ -1,20 +1,3 @@
-<?php
-function classify_name_group($name) {
-    $first_letter = strtolower($name[0]);
-
-    if (in_array($first_letter, ['a', 'b', 'c', 'd'])) {
-        return 'In a first group';
-    } elseif (in_array($first_letter, ['e', 'f', 'g', 'h', 'i'])) {
-        return 'In a second group';
-    } else {
-        return 'In a last group';
-    }
-}
-
-// Examples for the student names
-$names = ['dandi', 'irithel', 'topan', 'sandi'];
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +18,24 @@ $names = ['dandi', 'irithel', 'topan', 'sandi'];
     </header>
 
     <section>
+        <!-- PHP code to determine name group -->
+        <?php
+        function classify_name_group($name) {
+            $first_letter = strtolower($name[0]);
+
+            if (in_array($first_letter, ['a', 'b', 'c', 'd'])) {
+                return 'In a first group';
+            } elseif (in_array($first_letter, ['e', 'f', 'g', 'h', 'i'])) {
+                return 'In a second group';
+            } else {
+                return 'In a last group';
+            }
+        }
+
+        // Examples for the student names
+        $names = ['dandi', 'irithel', 'topan', 'sandi'];
+        ?>
+
         <!-- Display name group for each student name -->
         <h2>Name Groups</h2>
         <ul>
