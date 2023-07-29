@@ -18,14 +18,24 @@
     </header>
 
     <section>
-        <!-- PHP code to determine name group -->
-        <?php
-        function classify_name_group($name) {
-            $first_letter = strtolower($name[0]);
+        <h2>Name Groups</h2>
+        <ul id="nameGroupsList">
+            <!-- Names and name groups will be dynamically added here -->
+        </ul>
+    </section>
 
-            if (in_array($first_letter, ['a', 'b', 'c', 'd'])) {
+    <footer>
+        <p>&copy; <span id="currentYear"></span> My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript code to determine name group
+        function classifyNameGroup(name) {
+            var firstLetter = name.charAt(0).toLowerCase();
+
+            if (['a', 'b', 'c', 'd'].includes(firstLetter)) {
                 return 'In a first group';
-            } elseif (in_array($first_letter, ['e', 'f', 'g', 'h', 'i'])) {
+            } else if (['e', 'f', 'g', 'h', 'i'].includes(firstLetter)) {
                 return 'In a second group';
             } else {
                 return 'In a last group';
@@ -33,20 +43,19 @@
         }
 
         // Examples for the student names
-        $names = ['dandi', 'irithel', 'topan', 'sandi'];
-        ?>
+        var names = ['dandi', 'irithel', 'topan', 'sandi'];
 
-        <!-- Display name group for each student name -->
-        <h2>Name Groups</h2>
-        <ul>
-            <?php foreach ($names as $name) { ?>
-                <li><?php echo "$name, output: " . classify_name_group($name); ?></li>
-            <?php } ?>
-        </ul>
-    </section>
+        // Display name group for each student name
+        var nameGroupsList = document.getElementById('nameGroupsList');
+        names.forEach(function(name) {
+            var listItem = document.createElement('li');
+            listItem.textContent = name + ', output: ' + classifyNameGroup(name);
+            nameGroupsList.appendChild(listItem);
+        });
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> My Portfolio. All rights reserved.</p>
-    </footer>
+        // Update current year in the footer
+        var currentYear = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
 </body>
 </html>
